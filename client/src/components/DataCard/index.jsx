@@ -1,8 +1,7 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import data from "../images/data.jpg";
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Style = {
@@ -16,6 +15,9 @@ const Style = {
     },
     buttons: {
         justifyContent: "flex-end"
+    },
+    text: {
+        color: "white"
     }
 }
 
@@ -24,7 +26,8 @@ const SignupButton = ({ title, props }) => (
         variant="primary"
         type="submit"
         className="btn btn-primary"
-        onClick={() => props.history.push('/signup')}
+        size="lg"
+    // onClick={() => props.history.push('/signup')}
     >
         {title}
     </Button>
@@ -36,7 +39,8 @@ const LoginButton = ({ title, props }) => (
         variant="danger"
         type="submit"
         className="btn btn-primary"
-        onClick={() => props.history.push('/login')}
+        size="lg"
+    // onClick={() => props.history.push('/login')}
     >
         {title}
     </Button>
@@ -44,34 +48,36 @@ const LoginButton = ({ title, props }) => (
 
 )
 
-export default function DataCard(props) {
+export default function DataCard() {
     return (
 
         <Card>
             <Card.Img src={data} />
             <Card.ImgOverlay style={Style.overlay}>
-                <Card.Header>
-                    <Card.Title style={Style.title}>
-                        <blockquote class="blockquote">
-                            <h1>
-                                DATAROOM
+                {/* <Card.Header> */}
+                <Card.Title style={Style.title}>
+                    <h1>
+                        DATAROOM
                     </h1>
-                        </blockquote>
-                    </Card.Title>
-                </Card.Header>
+                </Card.Title>
+                {/* </Card.Header> */}
                 <Card.Body style={Style.buttons}>
+                    <Card.Text style={Style.text}>
+                        <h4> With one clinical study complete we are currently seeking capital to augment current device specs and complete a clinical study in the United States. Register to enter our dataroom.
+                       </h4>
+                    </Card.Text>
                     <Row >
                         <Col md={1} >
                         </Col>
                         <Col md={3} xs={12}>
-                            <SignupButton />
+                            <SignupButton title="Signup" />
 
                         </Col>
                         <Col md={4} xs={12}>
 
                         </Col>
                         <Col md={3} xs={12}>
-                            <LoginButton />
+                            <LoginButton title="Login" />
                         </Col>
                         <Col md={1} >
                         </Col>
@@ -80,66 +86,8 @@ export default function DataCard(props) {
                 </Card.Body>
 
             </Card.ImgOverlay >
-
-
         </Card >
+
 
     )
 }
-
-
-
-// A wrapper for <Route> that redirects to the login
-// screen if you're not yet authenticated.
-function PrivateRoute({ component: Component, ...rest }) {
-
-    return (
-        <Route
-            {...rest}
-            render={routeProps =>
-                rest.user ? (
-                    <Component {...routeProps} />
-                ) : (
-                        <Redirect
-                            to={{
-                                pathname: "/login",
-                                state: { from: routeProps.location }
-                            }}
-                        />
-                    )
-            }
-        />
-    );
-}
-
-const ConnectedPrivateRoute = connect(
-    // mapStateToProps
-    state => ({ user: state.user.details })
-)(PrivateRoute);
-
-// A wrapper for <Route> that redirects to the books 
-// screen if you're authenticated.
-function PublicRoute({ component: Component, ...rest }) {
-
-    return (
-        <Route
-            {...rest}
-            render={routeProps =>
-                !rest.user ? (
-                    <Component {...routeProps} />
-                ) : (
-                        <Redirect
-                            to={{
-                                pathname: "/books"
-                            }}
-                        />
-                    )
-            }
-        />
-    );
-}
-
-const ConnectedPublicRoute = connect(
-    // mapStateToProps
-    state => ({ user: state.user.details })
-)(PublicRoute);

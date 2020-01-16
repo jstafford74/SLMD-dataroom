@@ -14,7 +14,7 @@ const SLMDNav = () => (
     <Navbar.Brand href="#home" >SLMD</Navbar.Brand>
 
     <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="/">Home</Nav.Link>
       <Nav.Link href="#features">Dataroom</Nav.Link>
       <Nav.Link href="#pricing">Contact</Nav.Link>
     </Nav>
