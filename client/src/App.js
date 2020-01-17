@@ -3,9 +3,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import { Container } from "react-bootstrap";
 import Splash from "./pages/Splash";
 import Login from "./pages/Login";
-import Books from "./pages/Books";
-import DataCard from "./components/DataCard";
-import Detail from "./pages/Detail";
+// import Books from "./pages/Files";
 import NoMatch from "./pages/NoMatch";
 import SLMDNav from "./components/Nav";
 import Signup from "./pages/Signup";
@@ -34,8 +32,8 @@ export default function App() {
           <PublicRoute exact path="/" component={Splash} />
           <PublicRoute path="/login" component={Login} />
           <PublicRoute path="/signup" component={Signup} />
-          <PrivateRoute exact path="/books" component={Books} />
-          <PrivateRoute path="/books/:id" component={Detail} />
+          {/* <PrivateRoute exact path="/dataroom" component={Files} /> */}
+          
           <Route path="*"><NoMatch /></Route>
         </Switch>
       </div>

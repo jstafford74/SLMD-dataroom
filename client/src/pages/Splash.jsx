@@ -11,7 +11,7 @@ var Style = {
     },
     jumbo: {
         height: 650,
-        background:"rgba(0,0,0,.1)",
+        background:"rgba(0,0,0,0)",
         marginTop: 100
     },
     header: {

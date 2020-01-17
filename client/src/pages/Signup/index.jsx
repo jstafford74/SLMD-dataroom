@@ -36,11 +36,11 @@ const Signup = (props) => {
     >
         <Modal.Header closeButton>
             <Modal.Title id="signup-form">
-                Reading List Signup
+                SLMD Dataroom
         </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <h5 className="card-title">Signup to create your reading list</h5>
+            <h5 className="card-title">Signup to gain access to the SLMD dataroom</h5>
             <Formik
                 initialValues={{ firstName: '', lastName: '', email: '', username:'', password: '' }}
                 validationSchema={schema}
@@ -49,7 +49,7 @@ const Signup = (props) => {
                         const data = await API.signup(values);
                         if (data.success) {
                             new JotBrowser('jwt', data.jwt);
-                            props.history.replace('/books');
+                            props.history.replace('/files');
                         } else {
                             formikBag.setErrors(data.errors);
                         }

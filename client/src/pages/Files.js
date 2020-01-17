@@ -7,32 +7,25 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-class Books extends Component {
+class Files extends Component {
   state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
+    link: [],
+    name: []
   };
 
   componentDidMount() {
-    this.loadBooks();
+    this.loadFiles();
   }
 
-  loadBooks = () => {
-    API.getBooks()
+  loadFiles = () => {
+    API.getFiles()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ link: res.data, title: "", author: "", synopsis: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
-  };
-
+  
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -40,26 +33,13 @@ class Books extends Component {
     });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
-      })
-        .then(res => this.loadBooks())
-        .catch(err => console.log(err));
-    }
-  };
-
-  render() {
+    render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>SLMD Files</h1>
             </Jumbotron>
             <form>
               <Input
