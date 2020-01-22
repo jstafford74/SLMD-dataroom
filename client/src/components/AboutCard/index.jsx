@@ -26,9 +26,9 @@ const AboutCard = () => (
             </Card.Title>
 
             <Card.Text>
-                <h4>
-                We are a clinical stage ready product development company that owns and maintains a robust patent portfolio focusing on noninvasive detection of blood glucose.  Our portfolio covers roughly 75% of world healthcare expenditures attributed to diabetes.
-                </h4>
+                <h4><strong>
+                We are a clinical stage ready product development company that owns and maintains a robust patent portfolio focused on nearinfrared detection and measurement of blood glucose.  Our portfolio covers roughly 75% of the world's healthcare expenditures attributed to treating diabetes.
+                </strong> </h4>
       </Card.Text>
         </Card.ImgOverlay>
     </Card>

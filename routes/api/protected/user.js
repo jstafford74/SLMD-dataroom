@@ -3,7 +3,6 @@ const userController = require("../../../controllers/userController");
 
 // Matches with "/api/protected/users"
 router.route("/")
-  .get(userController.findAll)
   .post(userController.create)
 
   // Matches with "/api/protected/users/:id"

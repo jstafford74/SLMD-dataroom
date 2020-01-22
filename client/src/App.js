@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Splash from "./pages/Splash";
-import Login from "./pages/Login";
-// import Books from "./pages/Files";
+import Dataroom from "./pages/dataroom";
+
 import NoMatch from "./pages/NoMatch";
 import SLMDNav from "./components/Nav";
 import Signup from "./pages/Signup";
@@ -13,7 +13,7 @@ import { isLoggedIn } from './utils/Authentication'
 var Style = {
   Main: {
     backgroundImage: "url(" + require("./images/StLouArch.jpg") + ")",
-    backgroundSize:"cover",
+    backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     marginTop: 52,
     height: 1000
@@ -30,10 +30,9 @@ export default function App() {
 
         <Switch>
           <PublicRoute exact path="/" component={Splash} />
-          <PublicRoute path="/login" component={Login} />
-          <PublicRoute path="/signup" component={Signup} />
-          {/* <PrivateRoute exact path="/dataroom" component={Files} /> */}
-          
+          <PublicRoute path="/dataroom" component={Dataroom} />
+         
+
           <Route path="*"><NoMatch /></Route>
         </Switch>
       </div>

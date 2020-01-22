@@ -35,12 +35,12 @@ const SignupButton = ({ title, props }) => (
 );
 
 const LoginButton = ({ title, props }) => (
-    <Link to="/login"><Button
+    <Link to="/dataroom"><Button
         variant="danger"
         type="submit"
         className="btn btn-primary"
         size="lg"
-    // onClick={() => props.history.push('/login')}
+    
     >
         {title}
     </Button>
@@ -54,30 +54,29 @@ export default function DataCard() {
         <Card>
             <Card.Img src={data} />
             <Card.ImgOverlay style={Style.overlay}>
-                {/* <Card.Header> */}
+
                 <Card.Title style={Style.title}>
                     <h1>
                         DATAROOM
                     </h1>
                 </Card.Title>
-                {/* </Card.Header> */}
+
                 <Card.Body style={Style.buttons}>
                     <Card.Text style={Style.text}>
-                        <h4> With one clinical study complete we are currently seeking capital to augment current device specs and complete a clinical study in the United States. Register to enter our dataroom.
-                       </h4>
+                        <h4> <strong>With one clinical study complete we are currently seeking capital to augment our current device specs and complete a clinical study in the United States.
+                        </strong> </h4>
                     </Card.Text>
                     <Row >
                         <Col md={1} >
                         </Col>
-                        <Col md={3} xs={12}>
-                            <SignupButton title="Signup" />
+                        <Col md={1} xs={12}>
 
                         </Col>
-                        <Col md={4} xs={12}>
-
+                        <Col md={8} xs={12}>
+                            <LoginButton title="Enter Dataroom" />
                         </Col>
-                        <Col md={3} xs={12}>
-                            <LoginButton title="Login" />
+                        <Col md={1} xs={12}>
+
                         </Col>
                         <Col md={1} >
                         </Col>
