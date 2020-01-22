@@ -55,16 +55,16 @@ export default function DataCard() {
             <Card.Img src={data} />
             <Card.ImgOverlay style={Style.overlay}>
 
-                <Card.Title style={Style.title}>
+                <Card.Title style={Style.title} className="d-none d-lg-block">
                     <h1>
                         DATAROOM
                     </h1>
                 </Card.Title>
 
-                <Card.Body style={Style.buttons}>
-                    <Card.Text style={Style.text}>
-                        <h4> <strong>With one clinical study complete we are currently seeking capital to augment our current device specs and complete a clinical study in the United States.
-                        </strong> </h4>
+                <Card.Body style={Style.buttons} >
+                    <Card.Text style={Style.text} className="d-none d-lg-block">
+                        <h4> With one clinical study complete we are currently seeking capital to augment our current device specs and complete a clinical study in the United States.
+                        </h4>
                     </Card.Text>
                     <Row >
                         <Col md={1} >

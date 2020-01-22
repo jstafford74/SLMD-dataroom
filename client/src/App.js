@@ -6,7 +6,7 @@ import Dataroom from "./pages/dataroom";
 
 import NoMatch from "./pages/NoMatch";
 import SLMDNav from "./components/Nav";
-import Signup from "./pages/Signup";
+
 import { isLoggedIn } from './utils/Authentication'
 // see https://reacttraining.com/react-router/web/example/auth-workflow
 
