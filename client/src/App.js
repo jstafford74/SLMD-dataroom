@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import { Container } from "react-bootstrap";
 import Splash from "./pages/Splash";
 import Dataroom from "./pages/dataroom";
-
+import StickyFoot from "./components/Footer";
 import NoMatch from "./pages/NoMatch";
 import SLMDNav from "./components/Nav";
 
@@ -35,7 +35,9 @@ export default function App() {
 
           <Route path="*"><NoMatch /></Route>
         </Switch>
+       
       </div>
+      <StickyFoot />
     </Router>
 
   );
