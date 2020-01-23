@@ -32,7 +32,7 @@ async function seed() {
   try {
     // clear DB
     
-    await db.User.remove({});
+   
     
     // add demo users
     const saltRounds = parseInt(process.env.PASSWORD_SALT_ROUNDS, 10);
@@ -42,7 +42,7 @@ async function seed() {
       return;
     }));
 
-    const userSeedOp = await db.User.collection.insertMany(demoUserSeed);
+    await db.User.collection.insertMany(demoUserSeed);
     
     
 
