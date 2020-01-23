@@ -22,7 +22,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/slmdusers";
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+mongoose.connect(MONGODB_URI);
 
 // Start the API server
 app.listen(PORT, function() {

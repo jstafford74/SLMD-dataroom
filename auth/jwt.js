@@ -7,8 +7,8 @@ const db = require("../models");
 var opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = process.env.TOKEN_SECRET;
-opts.issuer = 'readinglist-api';
-opts.audience = 'readinglist-react-gui';
+opts.issuer = 'stlouismed-api';
+opts.audience = 'stlouismed-react-gui';
 
 module.exports = function () {
     passport.use(new JwtStrategy(opts, verifyCallback));
