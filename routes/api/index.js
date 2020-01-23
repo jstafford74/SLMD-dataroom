@@ -6,5 +6,5 @@ const authRoutes = require("./auth");
 
 // Book routes
 router.use("/auth", authRoutes);
-router.use("/protected", passport.authenticate('jwt', { session: false }), protectedRoutes);
+// router.use("/protected", passport.authenticate('jwt', { session: false }), protectedRoutes);
 module.exports = router;

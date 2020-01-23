@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const authController = require("../../controllers/authController");
 
-// Matches with "/api/auth/signup"
-router.use("/", function () {
+// Matches with "/api/auth/"
+router.route("/", function () {
   console.log('/ route hit');
 })
 
