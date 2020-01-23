@@ -1,6 +1,7 @@
 const db = require("../models");
 const jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
+const randomstring = require("randomstring");
 
 // Defining methods for the authController
 module.exports = {
@@ -76,18 +77,34 @@ function respondWithServerError(res, error) {
   });
 }
 
-function makeJWT(user) {
-  return jwt.sign(
+function makeJwts(user) {
+  const access = jwt.sign(
     {
       firstName: user.firstName,
       role: user.role
     },
-    process.env.TOKEN_SECRET,
+    process.env.ACCESS_TOKEN_SECRET,
     {
-      expiresIn: '1h',
+      expiresIn: process.env.ACCESS_TOKEN_DURATION,
       subject: user._id.toString(),
       issuer: 'readinglist-api',
       audience: 'readinglist-react-gui'
     }
   );
+
+  const refresh = jwt.sign(
+    {},
+    process.env.REFRESH_TOKEN_SECRET,
+    {
+      expiresIn: process.env.REFRESH_TOKEN_DURATION,
+      subject: randomstring.generate(),
+      issuer: 'stlouismed-api',
+      audience: 'stlouismed-react-gui'
+    }
+  );
+
+  return {
+    access,
+    refresh
+  };
 }

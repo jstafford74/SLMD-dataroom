@@ -12,7 +12,7 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build "
-},
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -28,6 +28,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.3",
     "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "randomstring": "^1.1.5"
   }
 }
