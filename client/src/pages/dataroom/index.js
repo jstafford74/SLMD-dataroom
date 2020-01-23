@@ -1,32 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { ButtonGroup, Button, Col, Row, Card } from 'react-bootstrap';
 
-var Style = {
-    container: {
-
-
-    },
-    jumbo: {
-        height: 650,
-        background: "rgba(0,0,0,0)",
-        marginTop: 100
-    },
-    header: {
-        marginBottom: 20,
-        color: "white",
-        fontSize: "3rem"
-
-    },
-    test: {
-        border: "black, solid",
-        padingTop: 300,
-        width: "100%",
-        height: 20,
-        color: "white",
-        fontSize: "3rem"
-    }
-}
 
 const ButtonGr = () => (
     <ButtonGroup vertical>
@@ -72,13 +47,13 @@ const ButtonGr = () => (
 
 export default function Dataroom() {
     return (
-               
-        <Card className="ml-4  pt-1" style={{maxWidth: "540px"}}>
+
+        <Card className="ml-4  pt-1" style={{ maxWidth: "540px" }}>
             <Row className="no-gutters">
                 <Col md={4}>
                     <ButtonGr />
                 </Col>
-                <Col  md={8}>
+                <Col md={8}>
                     <Card.Body className="pt-0">
                         <Card.Title className="mb-0">St. Louis Medical Devices</Card.Title>
                         <Card.Text>Contacts:</Card.Text>

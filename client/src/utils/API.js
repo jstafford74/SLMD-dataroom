@@ -20,8 +20,8 @@ axiosP.interceptors.request.use(function (config) {
 
 export default {
 
-  signup: function (newUser) {
-    return axios.post("/api/auth/signup", newUser).then(res => res.data);
+  landing: function (newUser) {
+    return axios.post("/api/auth", newUser).then(res => res.data);
   },
 
   login: function (credentials) {

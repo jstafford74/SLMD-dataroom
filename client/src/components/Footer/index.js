@@ -3,7 +3,7 @@ import { Container, ProgressBar } from "react-bootstrap";
 
 const StickyFoot = () => {
     return (
-        <footer class="footer mt-auto py-3">
+        <footer className="footer mt-auto py-3">
             <Container>
                 <ProgressBar striped variant="bg-info" now={100} />
 

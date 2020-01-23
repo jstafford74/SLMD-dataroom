@@ -45,13 +45,13 @@ export default function Splash() {
                     <Jumbotron fluid style={Style.jumbo}>
                         <Row>
                             <Col style={Style.header}>
-                                <h className='text-center'>ST. LOUIS MEDICAL DEVICES,INC.</h>
+                                <p className='text-center'>ST. LOUIS MEDICAL DEVICES,INC.</p>
 
                             </Col>
                         </Row>
                         <Row>
                             <Col style={Style.text}>
-                                <h className='text-center'>NONINVASIVE SOLUTIONS FOR DETECTING BLOOD GLUCOSE</h>
+                                <p className='text-center'>NONINVASIVE SOLUTIONS FOR DETECTING BLOOD GLUCOSE</p>
                             </Col>
                         </Row>
                         <Row>

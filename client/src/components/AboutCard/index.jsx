@@ -25,10 +25,10 @@ const AboutCard = () => (
                 </blockquote>
             </Card.Title >
 
-            <Card.Text className="d-none d-lg-block">
-                <h5 style={{color:"black"}}>
+            <Card.Text className="d-none d-lg-block"
+                 style={{color:"black"}}>
                     We are a clinical stage ready product development company that owns and maintains a robust patent portfolio focused on nearinfrared detection and measurement of blood glucose.  Our portfolio covers roughly 75% of the world's healthcare expenditures attributed to treating diabetes.
-                 </h5>
+                 
             </Card.Text>
         </Card.ImgOverlay>
     </Card>

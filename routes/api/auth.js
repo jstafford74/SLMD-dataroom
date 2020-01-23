@@ -2,12 +2,16 @@ const router = require("express").Router();
 const authController = require("../../controllers/authController");
 
 // Matches with "/api/auth/signup"
-router.route("/")
-  
+router.use("/", function () {
+  console.log('/ route hit');
+})
 
-  // see http://www.passportjs.org/docs/
+
+// see http://www.passportjs.org/docs/
 // Matches with "/api/auth/login"
-router.route("/dataroom")
-  
+router.use("/dataroom",function(){
+  console.log('/dataroom route hit');
+})
+
 
 module.exports = router;

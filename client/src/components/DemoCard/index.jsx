@@ -19,7 +19,7 @@ const DemoCard = () => (
         <Card.Img variant="top" src={science} style={Style.img} />
         <Card.ImgOverlay style={Style.overlay}>
             <Card.Title style={Style.title} className="d-none d-md-block">
-                <blockquote class="blockquote">
+                <blockquote className="blockquote">
                     <h1>
                         THE SCIENCE
                     </h1>

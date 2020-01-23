@@ -1,7 +1,7 @@
 import React from "react";
-import { Nav, Button, Navbar } from 'react-bootstrap';
+import { Nav,  Navbar } from 'react-bootstrap';
 import "./style.css";
-import { isLoggedIn, logOut } from '../../utils/Authentication'
+// import { isLoggedIn, logOut } from '../../utils/Authentication'
 
 var Navstyle = {
   main: {

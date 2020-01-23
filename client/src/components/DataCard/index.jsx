@@ -21,18 +21,18 @@ const Style = {
     }
 }
 
-const SignupButton = ({ title, props }) => (
-    <Link to="/signup"> <Button
-        variant="primary"
-        type="submit"
-        className="btn btn-primary"
-        size="lg"
-    // onClick={() => props.history.push('/signup')}
-    >
-        {title}
-    </Button>
-    </Link>
-);
+// const SignupButton = ({ title, props }) => (
+//     <Link to="/signup"> <Button
+//         variant="primary"
+//         type="submit"
+//         className="btn btn-primary"
+//         size="lg"
+//     // onClick={() => props.history.push('/signup')}
+//     >
+//         {title}
+//     </Button>
+//     </Link>
+// );
 
 const LoginButton = ({ title, props }) => (
     <Link to="/dataroom"><Button
@@ -40,7 +40,7 @@ const LoginButton = ({ title, props }) => (
         type="submit"
         className="btn btn-primary"
         size="lg"
-    
+
     >
         {title}
     </Button>
@@ -63,8 +63,8 @@ export default function DataCard() {
 
                 <Card.Body style={Style.buttons} >
                     <Card.Text style={Style.text} className="d-none d-lg-block">
-                        <h4> With one clinical study complete we are currently seeking capital to augment our current device specs and complete a clinical study in the United States.
-                        </h4>
+                         With one clinical study complete we are currently seeking capital to augment our current device specs and complete a clinical study in the United States.
+                        
                     </Card.Text>
                     <Row >
                         <Col md={1} >

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import Splash from "./pages/Splash";
 import Dataroom from "./pages/dataroom";
 import StickyFoot from "./components/Footer";
@@ -45,26 +45,26 @@ export default function App() {
 
 // A wrapper for <Route> that redirects to the login
 // screen if you're not yet authenticated.
-function PrivateRoute({ component: Component, ...rest }) {
+// function PrivateRoute({ component: Component, ...rest }) {
 
-  return (
-    <Route
-      {...rest}
-      render={routeProps =>
-        isLoggedIn() ? (
-          <Component {...routeProps} />
-        ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: routeProps.location }
-              }}
-            />
-          )
-      }
-    />
-  );
-}
+//   return (
+//     <Route
+//       {...rest}
+//       render={routeProps =>
+//         isLoggedIn() ? (
+//           <Component {...routeProps} />
+//         ) : (
+//             <Redirect
+//               to={{
+//                 pathname: "/login",
+//                 state: { from: routeProps.location }
+//               }}
+//             />
+//           )
+//       }
+//     />
+//   );
+// }
 
 // A wrapper for <Route> that redirects to the books 
 // screen if you're authenticated.
