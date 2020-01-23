@@ -7,22 +7,26 @@ const db = require("../models");
 // This file empties the Book and User collections and inserts the seeds below
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 const demoUserSeed = [
   {
-    role: "user",
+   
     firstName: "Jeremiah",
     lastName: "Stafford",
+    username: 'jstafford',
     email: "jstafford@slmdevice.com",
-    username: 'jstafford'
+    passwordHash:null,
+    role: "user"
   },
   {
-    role: "user",
+
     firstName: "George",
     lastName: "Chen",
+    username: 'gchen',
     email: "gchen@slmdevice.com",
-    username: 'gchen'
+    passwordHash: null,
+    role: "user"
   }
 ]
 
@@ -31,9 +35,9 @@ const demoUserSeed = [
 async function seed() {
   try {
     // clear DB
-    
-   
-    
+
+
+
     // add demo users
     const saltRounds = parseInt(process.env.PASSWORD_SALT_ROUNDS, 10);
     const password = process.env.SEED_USER_PASSWORD;
@@ -43,8 +47,8 @@ async function seed() {
     }));
 
     await db.User.collection.insertMany(demoUserSeed);
-    
-    
+
+
 
     process.exit(0);
 
