@@ -26,7 +26,7 @@ var Style = {
 export default function App() {
   return (
     <Router>
-      <div style={Style.Main}>
+      <div >
 
         <SLMDNav />
 

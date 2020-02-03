@@ -44,9 +44,9 @@ const Login = (props) => {
         aria-labelledby="login-form"
         centered
     >
-        <Modal.Header closeButton style={Style.header}>
+        <Modal.Header closeButton >
             <Modal.Title id="login-form" className="text-align-center">
-                Melanoscan Profile Login
+                SLMD Dataroom Login
         </Modal.Title>
         </Modal.Header>
         <Modal.Body style={Style.body}>
