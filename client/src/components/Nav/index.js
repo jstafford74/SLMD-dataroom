@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
-import { Button, Navbar, Nav } from 'react-bootstrap';
+import { Button, Navbar, Nav, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "./style.css";
 import { onLogout } from '../../redux/actions'
@@ -27,24 +27,31 @@ const SLMDNav = (props) => (
     {/* <Col lg={{ span: 6, offset: 2 }} > */}
     <Navbar.Collapse id='respnav' className='justify-content-end'  >
       <Nav variant="pills" defaultActiveKey="/">
-
-        <Nav.Item>
-          <Link to="/" style={Navstyle.font}><strong>Home</strong></Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Link to="/login" style={Navstyle.font}>Dataroom</Link>
-        </Nav.Item>
-
+        <Col>
+          <Nav.Item>
+            <Link to="/" style={Navstyle.font}><strong>Home</strong></Link>
+          </Nav.Item>
+        </Col>
+        <Col>
+          <Nav.Item>
+            <Link to="/login" style={Navstyle.font}>Dataroom</Link>
+          </Nav.Item>
+        </Col>
         {
           props.user ?
-            <Nav.Item>
-              <Button onClick={props.onLogout}>Logout</Button></Nav.Item> :
-            <Nav.Item>
-              <Link to={"/login"}>
-                <Button>Login</Button>
-              </Link>
-            </Nav.Item>
+            <Col>
+              <Nav.Item>
+                <Button onClick={props.onLogout}>Logout</Button>
+              </Nav.Item>
+            </Col> :
 
+            <Col>
+              <Nav.Item>
+                <Link to={"/login"}>
+                  <Button>Login</Button>
+                </Link>
+              </Nav.Item>
+            </Col>
         }
 
       </Nav>
