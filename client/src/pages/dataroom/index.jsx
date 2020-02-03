@@ -98,10 +98,10 @@ export default function Dataroom() {
                     <Col md={8}>
                         <Card.Body className="pt-0">
                             <Card.Title className="mb-0">St. Louis Medical Devices</Card.Title>
-                            <Card.Text>Contacts:</Card.Text>
-                            <Card.Text className="mb-0"><small className="text-muted" >George Chen, CEO</small></Card.Text>
+
+                            <Card.Text className="mb-0"><small >George Chen, CEO</small></Card.Text>
                             <Card.Text><small className="text-muted">GChen@slmdevice.com</small></Card.Text>
-                            <Card.Text className="mb-0"><small className="text-muted">Jeremiah Stafford, COO/CFO</small></Card.Text>
+                            <Card.Text className="mb-0"><small>Jeremiah Stafford, COO/CFO</small></Card.Text>
                             <Card.Text><small className="text-muted">JStafford@slmdevice.com</small></Card.Text>
                         </Card.Body>
                     </Col>
