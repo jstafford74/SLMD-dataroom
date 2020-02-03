@@ -21,13 +21,8 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes)
 
 //Connet to mongoose
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/slmd_dataroom",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-  }
-);
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+
 
 
 app.listen(PORT, () => {

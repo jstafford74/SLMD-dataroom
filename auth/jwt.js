@@ -6,7 +6,7 @@ const db = require("../models");
 
 var opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = process.env.TOKEN_SECRET;
+opts.secretOrKey = process.env.ACCESS_TOKEN_SECRET;
 opts.issuer = 'stlouismed-api';
 opts.audience = 'stlouismed-react-gui';
 
