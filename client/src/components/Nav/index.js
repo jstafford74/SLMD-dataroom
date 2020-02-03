@@ -1,29 +1,69 @@
 import React from "react";
-import { Nav,  Navbar } from 'react-bootstrap';
+import { connect } from 'react-redux'
+import { Button, Navbar, Nav, Col } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import "./style.css";
-// import { isLoggedIn, logOut } from '../../utils/Authentication'
+import { onLogout } from '../../redux/actions'
 
 var Navstyle = {
   main: {
     zIndex: 1,
-    opacity:1
+    opacity: 1
   },
-  font:{
-    fontSize:16,
-    color:'lightblue'
+  font: {
+    fontSize: 16,
+    color: 'lightblue'
+  },
+  navitem: {
+    width: 20,
+    marginLeft: 5,
+    marginRight: 5
   }
 }
-const SLMDNav = () => (
-  <Navbar fixed="top" bg="dark" variant="dark" style={Navstyle.main}>
-    <Navbar.Brand href="#home" style={Navstyle.font} >SLMD</Navbar.Brand>
+const SLMDNav = (props) => (
+  <Navbar fixed="top" bg="primary" variant="dark" hover collapseOnSelect expand='lg'>
+    <Navbar.Brand to="/"  >SLMD</Navbar.Brand>
+    <Navbar.Toggle aria-controls='respnav' />
+    {/* <Col lg={{ span: 6, offset: 2 }} > */}
+    <Navbar.Collapse id='respnav' className='justify-content-end'  >
+      <Nav variant="pills" defaultActiveKey="/">
+        <Col>
+          <Nav.Item>
+            <Link to="/" style={Navstyle.font}><strong>Home</strong></Link>
+          </Nav.Item>
+        </Col>
+        <Col>
+          <Nav.Item>
+            <Link to="/login" style={Navstyle.font}>Dataroom</Link>
+          </Nav.Item>
+        </Col>
+        {
+          props.user ?
+            <Col>
+              <Nav.Item>
+                <Button onClick={props.onLogout}>Logout</Button>
+              </Nav.Item>
+            </Col> :
 
-    <Nav className="mr-auto">
-      <Nav.Link href="/" style={Navstyle.font}><strong>Home</strong></Nav.Link>
-      <Nav.Link href="/dataroom" style={Navstyle.font}>Dataroom</Nav.Link>
-      
-    </Nav>
+            <Col>
+              <Nav.Item>
+                <Link to={"/login"}>
+                  <Button>Login</Button>
+                </Link>
+              </Nav.Item>
+            </Col>
+        }
+
+      </Nav>
+    </Navbar.Collapse>
   </Navbar>
 );
 
 
-export default SLMDNav;
+export default connect(
+  // mapStateToProps
+  state => ({ user: state.user.details }),
+  // mapDispatchToProps
+  { onLogout }
+)(SLMDNav);
+

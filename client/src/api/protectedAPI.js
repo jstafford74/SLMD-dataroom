@@ -5,24 +5,11 @@ import store from '../redux/store';
 import { onLogout } from '../redux/actions';
 
 export default {
-    // Gets all files
-    getFiles: function () {
-        return axiosP.get("/files");
-        // },
-        // // Gets the book with the given id
-        // getBook: function (id) {
-        //     return axiosP.get("/books/" + id);
-        // },
-        // // Deletes the book with the given id
-        // deleteBook: function (id) {
-        //     return axiosP.delete("/books/" + id);
-        // },
-        // // Saves a book to the database
-        // saveBook: function (bookData) {
-        //     return axiosP.post("/books", bookData);
-        // }
+
+    Profile: function () {
+        return axiosP.get("/profile/");
     }
-}
+};
 
 const axiosP = axios.create({
     baseURL: '/api/protected'

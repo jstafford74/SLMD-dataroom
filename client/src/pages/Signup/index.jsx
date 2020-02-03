@@ -1,12 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { Button, Col, Form, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { Browser as JotBrowser } from 'jwt-jot'
 
-// import API from '../../utils/API'
-import {ServerError} from '../../components/Form';
+
+import { onLogin } from '../../redux/actions'
+import API from '../../api'
+import { ServerError } from '../../components/Form';
+
 
 
 const schema = yup.object({
@@ -42,14 +45,13 @@ const Signup = (props) => {
         <Modal.Body>
             <h5 className="card-title">Signup to gain access to the SLMD dataroom</h5>
             <Formik
-                initialValues={{ firstName: '', lastName: '', email: '', username:'', password: '' }}
+                initialValues={{ firstName: '', lastName: '', email: '', username: '', password: '' }}
                 validationSchema={schema}
                 onSubmit={async (values, formikBag) => {
                     try {
                         const data = await API.signup(values);
                         if (data.success) {
-                            new JotBrowser('jwt', data.jwt);
-                            props.history.replace('/files');
+                            props.onLogin(data.tokens);
                         } else {
                             formikBag.setErrors(data.errors);
                         }
@@ -59,6 +61,7 @@ const Signup = (props) => {
                     return;
                 }}
             >
+
                 {({
                     status,
                     values,
@@ -71,7 +74,7 @@ const Signup = (props) => {
                     /* and other goodies */
                 }) => (
                         <Form noValidate onSubmit={handleSubmit}>
-                                                        <ServerError axiosError={status} />
+                            <ServerError axiosError={status} />
 
                             <Form.Row>
                                 <Form.Group as={Col} controlId="signupFirstName">
@@ -176,4 +179,9 @@ const Signup = (props) => {
 
 };
 
-export default Signup;
+export default connect(
+    // mapStateToProps
+    null,
+    // mapDispatchToProps
+    { onLogin }
+)(Signup);
